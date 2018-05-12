@@ -1,0 +1,18 @@
+<h1>Create new review</h1>
+
+<%= simple_form_for @review do |f| %>
+<% if @review.errors.any? %>
+<div class="errors-container">
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= f.input :content %>
+<%= f.input :rating %>
+<%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to restaurant', restaurant_path(@restaurant) %>
